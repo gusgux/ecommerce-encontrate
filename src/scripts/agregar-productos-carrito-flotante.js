@@ -1,8 +1,3 @@
-/* //Variables
-const carritoFlotante = document.querySelector('#carrito-flotante'); //todo el contenedor del carrito 
-const listaProductos = document.querySelector('#'); //Agrega el id de la lista de los productos
-const contenedorCarritoFlotante = document.querySelector('#lista-carrito-flotante'); //agrega id para lista de carrito 
-const eliminarProducto = document.querySelector('.btn-close"'); //Boton de eliminar producto */
 carrito=[];
 cargarCarrito();
 // agregarObraCarrito();
@@ -80,13 +75,13 @@ function agregarCarritoFlotante(){
                <h6 class="nombre-artista">${carrito[i].artista}</h6>
                <br>
                <!--Tamano del producto-->
-                <p class="centrado tamano-obra">Largo ${carrito[i].largo} x Ancho ${carrito[i].ancho}</p> 
+                <p class="centrado tamano-obra">Largo ${carrito[i].largo}cm x Ancho ${carrito[i].ancho}cm</p> 
                 <br>
                 <!--Columna 2.2-->
                 <div class="row">
                     <!--Columna 2.2.2   Precio de la pieza-->
                     <div class="col-11" >
-                        <p class="precio"> ${carrito[i].precio}</p> 
+                        <p class="precio"> ${carrito[i].precio} </p> 
                     </div>
                 </div>
             </div>
@@ -131,8 +126,6 @@ eliminarProducto.forEach(element => {
         totalFooter.textContent = '$ '+subTotal + '.00';
         //eliminar solo una fila 
         let getId = contenedorCarrito.querySelector('[data-idObra]');
-        //console.log(getId.dataset.idobra);
-       // console.log(getId);
         //carrito=[];
         console.log(carrito);
         let nuevoCarrito = [];
@@ -148,30 +141,3 @@ eliminarProducto.forEach(element => {
     })
 
 });
-
-
-
-/* function eliminarCurso(e.target.classList){
-    console.log ('desde eiminar curso');
-
-} */
-
-/*   Idea de eliminacion de articulo
-// Agregar un manejador de eventos al botón
-botonCarrito.addEventListener('click', function() {
-    agregarAlCarrito(productoSeleccionado);
-  }); */
-
-
-
-/* cargarEventListeners()//Llamo la funcion
-function cargarEventListeners(){
-    //Cuando agregas un producto presionando "Agregar al carrito"
-    listaProductos.addEventListener('click', agregarProducto);
-}
-
-
-//Funciones
-function agregarProducto(){
-    console.log('presionarndo en cursos');//verificando que funcione
-} */
