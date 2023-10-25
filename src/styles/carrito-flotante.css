@@ -34,6 +34,11 @@ body{
 .controlCantidad:hover{
     cursor: pointer;
 }
+
+.card-title{
+    font-weight: bold;
+}
+
 .realizar-pago{
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
@@ -102,6 +107,7 @@ body{
         font-size: 18px;
     }
     .card-title{
+        font-weight: bold;
         font-size: 18px;
     }
     .nombre-artista{
@@ -111,11 +117,20 @@ body{
         font-size: 15px;
     }
     .btn-close{
-        padding-left: 95px;
+        padding-left: 30px;
     }
     .precio{
         text-align: right;
     }
+}
+@media (max-width: 600px){  /*Vista entre mobile-tableta*/
+    img{
+        max-width: 40%;
+        max-height: 70%;
+        background-size: cover;
+    }
+
+
 }
 
 @media (max-width: 400px){  /*Vista Mobile*/
@@ -132,7 +147,7 @@ body{
         overflow-y: scroll;
     }
     img{
-        max-width: 70%;
+        max-width: 40%;
         max-height: 70%;
         background-size: cover;
     }
@@ -152,7 +167,7 @@ body{
         font-size: 16px;
     }
     .btn-close{
-        padding-left: 50px;
+        padding-left: 10px;
     }
     .cerrar{
         display: flex;
@@ -161,7 +176,7 @@ body{
     .realizar-pago{
         font-family: 'Archivo', sans-serif;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         border-radius: 10px;
         color: #D0417E;
         box-shadow: 0px 3px 5px 0px #D0417E;
@@ -184,7 +199,7 @@ body{
     }
     
     .total-footer{
-        font-size: 15px;
+        font-size: 14px;
         font-weight: bold;
         padding-top:8px ;
         text-align: left;
