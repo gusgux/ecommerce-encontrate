@@ -188,6 +188,11 @@ body {
 	background: var(--thirdcollor);
 }
 
+.footer p {
+	margin: 0;
+	color: var(--textcolor);
+}
+
 /*font sizes*/
 
 .head-1 {
