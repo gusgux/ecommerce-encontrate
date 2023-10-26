@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="../styles/registro.css">
   <link rel="stylesheet" href="../styles/styleBarraDeNavegacion.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script defer src="../scripts/registro-toggle.js"></script>
+  <script defer type="module" src="../scripts/registro-toggle.js"></script>
+  <script defer type="module" src="../scripts/fetchapi.js"></script>
 
   <link rel="stylesheet" href="../styles/burguerMenuAnimacionStyle.css" />
 
@@ -145,6 +146,23 @@
     <!-- <i class="bi bi-list"></i> -->
   </header>
 
+  <!-- Alerta bootstrap -->
+  <div class="modal fade" id="alert-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ModalLabelProducto">Aviso</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="alert-message"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -296,8 +314,8 @@
             <form id="formularioLogin" class="needs-validation" novalidate> <!-- inicia formulario -->
               <div class="mb-3 position-relative">
                 <label for="labelEmail" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="inputEmailLogin" aria-describedby="email" required
-                  onblur="validarCorreoLogin()" minlength="8" maxlength="45">
+                <input type="email" value="limon@email.com" class="form-control" id="inputEmailLogin"
+                  aria-describedby="email" required onblur="validarCorreoLogin()" minlength="8" maxlength="45">
                 <div class="valid-tooltip">
                   Correcto
                 </div>
@@ -307,7 +325,7 @@
               </div>
               <div class="mb-3 position-relative">
                 <label for="labelPasswordLogin" class="form-label">Contraseña</label>
-                <input type="password" class="form-control pass" id="inputPasswordLogin" required
+                <input type="password" value="12345678" class="form-control pass" id="inputPasswordLogin" required
                   onblur="validarPassLogin()" minlength="8" maxlength="25">
                 <div class="valid-tooltip">
                   Correcto
