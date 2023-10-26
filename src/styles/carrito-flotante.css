@@ -10,7 +10,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-   /* max-height: 200px;*/
 }
 
 .imagen-producto-carrito-flotante img {
@@ -34,6 +33,11 @@ body{
 .controlCantidad:hover{
     cursor: pointer;
 }
+
+.card-title{
+    font-weight: bold;
+}
+
 .realizar-pago{
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
@@ -41,15 +45,6 @@ body{
     border-radius: 10px;
     color: #D0417E;
     box-shadow: 0px 3px 5px 0px #D0417E;
-    /* background-color: hsl(0, 0%, 100%);
-    color: #D0417E;
-    font-weight: 600;
-    text-align:  center;
-    font-size: 17px;
-    padding-top:10px ;
-    padding-bottom:10px ;
-    border-radius: 15%;
-    box-shadow: 1px 1px 1px 1px #D0417E; */
 }
 
 .sub-total{
@@ -65,8 +60,9 @@ body{
     padding-top:10px ;
     text-align: left;
 }
-
-
+.btn-close{
+    margin-left: 350px;
+}
 
 .carrito{
     background-color: #e0e3e9;
@@ -80,7 +76,6 @@ body{
     padding-bottom: 13px;
     overflow-y: scroll;
 }
-
 
 @media (max-width: 834px){  /*Vista Tableta*/
     .carrito{
@@ -102,6 +97,7 @@ body{
         font-size: 18px;
     }
     .card-title{
+        font-weight: bold;
         font-size: 18px;
     }
     .nombre-artista{
@@ -111,11 +107,23 @@ body{
         font-size: 15px;
     }
     .btn-close{
-        padding-left: 95px;
+        padding-left: 30px;
+    }
+    .precioSigno{
+        margin-left: 180px;
     }
     .precio{
-        text-align: right;
+        text-align: left;
     }
+}
+@media (max-width: 600px){  /*Vista entre mobile-tableta*/
+    img{
+        max-width: 40%;
+        max-height: 70%;
+        background-size: cover;
+    }
+    
+
 }
 
 @media (max-width: 400px){  /*Vista Mobile*/
@@ -132,7 +140,7 @@ body{
         overflow-y: scroll;
     }
     img{
-        max-width: 70%;
+        max-width: 40%;
         max-height: 70%;
         background-size: cover;
     }
@@ -152,7 +160,7 @@ body{
         font-size: 16px;
     }
     .btn-close{
-        padding-left: 50px;
+        margin-left: 270px;
     }
     .cerrar{
         display: flex;
@@ -161,19 +169,10 @@ body{
     .realizar-pago{
         font-family: 'Archivo', sans-serif;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         border-radius: 10px;
         color: #D0417E;
         box-shadow: 0px 3px 5px 0px #D0417E;
-        /* background-color: hsl(0, 0%, 100%);
-        color: #D0417E;
-        font-weight: 600;
-        text-align:  center;
-        font-size: 17px;
-        padding-top:10px ;
-        padding-bottom:10px ;
-        border-radius: 15%;
-        box-shadow: 1px 1px 1px 1px #D0417E; */
     }
     
     .sub-total{
@@ -184,7 +183,7 @@ body{
     }
     
     .total-footer{
-        font-size: 15px;
+        font-size: 14px;
         font-weight: bold;
         padding-top:8px ;
         text-align: left;
@@ -197,9 +196,11 @@ body{
 }
 
 .precio{
+    text-align: left;
+}
+.precioSigno{
     text-align: right;
 }
-
 .centrado{
     text-align: center;
 }
