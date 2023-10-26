@@ -10,7 +10,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-   /* max-height: 200px;*/
 }
 
 .imagen-producto-carrito-flotante img {
@@ -46,15 +45,6 @@ body{
     border-radius: 10px;
     color: #D0417E;
     box-shadow: 0px 3px 5px 0px #D0417E;
-    /* background-color: hsl(0, 0%, 100%);
-    color: #D0417E;
-    font-weight: 600;
-    text-align:  center;
-    font-size: 17px;
-    padding-top:10px ;
-    padding-bottom:10px ;
-    border-radius: 15%;
-    box-shadow: 1px 1px 1px 1px #D0417E; */
 }
 
 .sub-total{
@@ -70,8 +60,9 @@ body{
     padding-top:10px ;
     text-align: left;
 }
-
-
+.btn-close{
+    margin-left: 350px;
+}
 
 .carrito{
     background-color: #e0e3e9;
@@ -85,7 +76,6 @@ body{
     padding-bottom: 13px;
     overflow-y: scroll;
 }
-
 
 @media (max-width: 834px){  /*Vista Tableta*/
     .carrito{
@@ -119,8 +109,11 @@ body{
     .btn-close{
         padding-left: 30px;
     }
+    .precioSigno{
+        margin-left: 180px;
+    }
     .precio{
-        text-align: right;
+        text-align: left;
     }
 }
 @media (max-width: 600px){  /*Vista entre mobile-tableta*/
@@ -129,7 +122,7 @@ body{
         max-height: 70%;
         background-size: cover;
     }
-
+    
 
 }
 
@@ -167,7 +160,7 @@ body{
         font-size: 16px;
     }
     .btn-close{
-        padding-left: 10px;
+        margin-left: 270px;
     }
     .cerrar{
         display: flex;
@@ -180,15 +173,6 @@ body{
         border-radius: 10px;
         color: #D0417E;
         box-shadow: 0px 3px 5px 0px #D0417E;
-        /* background-color: hsl(0, 0%, 100%);
-        color: #D0417E;
-        font-weight: 600;
-        text-align:  center;
-        font-size: 17px;
-        padding-top:10px ;
-        padding-bottom:10px ;
-        border-radius: 15%;
-        box-shadow: 1px 1px 1px 1px #D0417E; */
     }
     
     .sub-total{
@@ -212,9 +196,11 @@ body{
 }
 
 .precio{
+    text-align: left;
+}
+.precioSigno{
     text-align: right;
 }
-
 .centrado{
     text-align: center;
 }
