@@ -1,3 +1,4 @@
+import { updateData } from "./apihttp-formulario.js";
 import { validarCheckbox, validarInput, validarOptiones } from "./contactos-validaciones.js";
 
 (() => {
@@ -52,6 +53,8 @@ import { validarCheckbox, validarInput, validarOptiones } from "./contactos-vali
             const valuesForm = Object.fromEntries(new FormData(event.target))
             form.parentElement.classList.add("oculto")
             mensajeCompletado.classList.remove("oculto")
+            console.log(valuesForm);
+            updateData(valuesForm);
 
             localStorage.setItem('usuario', JSON.stringify(valuesForm));
 
