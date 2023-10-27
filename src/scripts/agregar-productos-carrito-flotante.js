@@ -63,17 +63,17 @@ function agregarCarritoFlotante(){
                <h6 class="nombre-artista">${carrito[i].artista}</h6>
                <br>
                <!--Columna 2 fila 3  Tamano-->
-                <p class="centrado tamano-obra">Largo ${carrito[i].largo} x Ancho ${carrito[i].ancho}</p> 
+                <p class="centrado tamano-obra negro-flotante" >Largo ${carrito[i].largo} x Ancho ${carrito[i].ancho}</p> 
                 <br>
                 <!--Columna 2 fila 3  Tamano-->
                 <div class="row"> <!--row->
                     <!--Fila 3 col 1   signo de precio-->
                     <div class="col-8">
-                        <p class="precioSigno">$</p>
+                        <p class="precioSigno negro-flotante" >$</p>
                     </div>
 					<!--Fila 3 col 2   precio-->
                     <div class="col-4" >
-                        <p class="precio"> ${carrito[i].precio} </p> 
+                        <p class="precio negro-flotante" > ${carrito[i].precio} </p> 
                     </div>
                 </div>
             </div>
