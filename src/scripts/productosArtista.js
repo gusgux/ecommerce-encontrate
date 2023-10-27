@@ -216,7 +216,7 @@ const artistasValoresConsulta= [
 
 
 
-const row = document.querySelector(".row")
+const row = document.querySelector("#bloqueObras");
 
 Obra.forEach(element => {
 
