@@ -79,7 +79,7 @@ function calcularSubTotal (){
         subTotal += carrito[i].precio;
     }
     console.log (subTotal);
-
+    console.log(carrito.length)
     const totalFooter = document.querySelector('.sub-total');
     totalFooter.textContent = '$ '+subTotal + '.00';
 }
@@ -87,13 +87,18 @@ function calcularSubTotal (){
 //Suma total
 calcularTotal();
 function calcularTotal() {
-    calcularSubTotal(); 
+    //Condicion si no hay obras el total es 0 
+    if(carrito.length == 0){
+        costoEnvio=0;
+    }
     const total = subTotal + costoEnvio;
     console.log(total);
 
     const totalElement = document.querySelector('.precio-total');
     totalElement.textContent = 'Total= $'+total+'.00';
+    
 }
+
 
 //Eliminacion del producto
 const eliminarProducto = document.querySelectorAll('.btn-close');
@@ -109,6 +114,7 @@ eliminarProducto.forEach(element => {
         const totalFooter = document.querySelector('.sub-total');
         subTotal=subTotal-parseInt(precio.textContent);
         totalFooter.textContent = '$ '+subTotal + '.00';
+        calcularTotal();
         //eliminar solo una fila 
         let getId = contenedorCarrito.querySelector('[data-idObra]');
         //console.log(getId.dataset.idobra);
@@ -126,5 +132,5 @@ eliminarProducto.forEach(element => {
         localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
         
     })
-
+    
 });
