@@ -147,13 +147,13 @@ line-height: normal;
 
 
 } 
-.card-img, .card-img-top{
+#bloqueObras .card-img, #bloqueObras .card-img-top{
     /* max-height: 240px; */
     border: 6px solid black;
     transition: all  ease 300ms;
     /* max-height: 312px; */
 }
-.card-body {
+#bloqueObras .card-body {
     position: absolute;
     top: 0px;
     max-width: 240px;
@@ -165,7 +165,8 @@ line-height: normal;
     /* opacity: 0;  */ /* después de que haga un buen contenedor para el texto podré quitar este */
 }
 
-.card-body:hover{
+
+#bloqueObras .card-body:hover{
     opacity: 0;
 }
 
@@ -190,35 +191,13 @@ opacity: 1;
 z-index: 4;
 /* color: #D0417E; */
 }
-.card-img:hover, .card-img-top:hover{
+#bloqueObras .card-img:hover, #bloqueObras .card-img-top:hover{
     transition: transform 200ms;
     transform: scale(1.12);
     z-index: 100;
 
 }
-.footer {
-  text-align: center;
-  color: var(--textcolor);
-  background: var(--thirdcollor);
-}
 
-.head-4 {
-    font-size: 24px;
-    line-height: 32px;
-    
-    background-color: black;
-    color: white;
-    margin: 0;
-  }
-
-  .head-6 {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.15px;
-    background-color: black;
-    color: white;
-    margin: 0;
-  }
 
 @media screen and (max-width:1587px) {
 
