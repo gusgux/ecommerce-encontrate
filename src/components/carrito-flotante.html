@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/carrito-flotante.css">
+    
 </head>
 
 
@@ -19,19 +20,22 @@
     <p id="descripcion">Titulo</p>
     <h1 id="dimensiones">Titulo</h1>
     <p id="precio">Titulo</p> -->
+
+    
+    <button id="muestraCarritoFlotante" onclick="mostrarCarrito();">Mostrar carrito</button>
+    
     <div id="carrito-flotante" class="container  carrito-flotante-contenedor carrito"><!--se agrega id para js-->
         <header>
+            <!--Boton para cerrar carrito flotante-->
+            <button id="ocultaCarritoFlotante" type="button" class="btn" aria-label onclick="ocultarCarrito();">Cerrar</button>
             <hr>
             <h2 class="titulosRosa centrado">MI CARRITO</h2>
             <h5 class="centrado obras"> OBRAS EN MI CARRITO</h5>
         </header>
+
         <div id="fila-carrito-flotante">
 
-        
-        
-
-       
-    </div><!--Fin fila carrito flotante-->
+        </div><!--Fin fila carrito flotante-->
 
        <footer>
         <hr>
@@ -55,6 +59,9 @@
         
        </footer>
    </div>
+
+
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="../scripts/agregar-productos-carrito-flotante.js"></script>
