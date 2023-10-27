@@ -25,6 +25,10 @@ body{
 #carrito-flotante{
     display: none;
 }
+
+#carrito-flotante.mostrar{
+display: block;
+} 
    
 .imagen-producto-carrito-flotante{
     display: flex;
