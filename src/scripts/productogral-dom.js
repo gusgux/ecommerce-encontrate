@@ -380,7 +380,7 @@ function agregarAlCarrito(producto) {
 
 
 // Obtén el botón "Agregar al Carrito" por su ID
-const botonCarrito = document.getElementById('agregarAlCarrito');
+const botonCarrito5 = document.getElementById('agregarAlCarrito');
 const comprarAhora = document.getElementById('comprarAhora');
 
 function agregarAlCarritoYComprar() {
@@ -393,7 +393,7 @@ function agregarAlCarritoYComprar() {
     }
 }
 
-botonCarrito.addEventListener('click', agregarAlCarritoYComprar);
+botonCarrito5.addEventListener('click', agregarAlCarritoYComprar);
 comprarAhora.addEventListener('click', agregarAlCarritoYComprar);
 
 

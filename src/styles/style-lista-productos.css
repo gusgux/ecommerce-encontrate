@@ -114,6 +114,7 @@ footer {
     width: 85%;
     line-height: 30px;
     font-size: larger;
+    font-family: 'Roboto';
 }
 #pinturasAcuarelas,
 #pinturasAcrilicas,
@@ -346,7 +347,7 @@ v #ventanaflotante li {
         font-size: 15px;
         text-align: center;
         font-weight: bold;
-        color: #000;
+      
     }
 
 
