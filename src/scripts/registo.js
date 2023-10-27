@@ -3,6 +3,7 @@
 onload = function () {
     var telefono = document.querySelectorAll('.validanumericos')[0];
     var nombre = document.querySelectorAll('.nombre')[0];
+    var apellidos = document.querySelectorAll('.apellido')[0];
     var correoRegistro = document.querySelectorAll('.correoRegistro')[0];
     var passRegistro = document.querySelectorAll('.passRegistro1')[0];
     var passRegistroConfirmar = document.querySelectorAll('.passRegistro2')[0];
@@ -25,6 +26,18 @@ onload = function () {
     }
 
     nombre.onpaste = function (e) {
+        e.preventDefault();
+    }
+
+    apellidos.onkeypress = function (e) {
+        if ((e.keyCode > 64 && e.keyCode < 91) || (e.keyCode > 96 && e.keyCode < 123) || (e.keyCode == 32) || (e.keyCode > 163 && e.keyCode < 166)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    apellidos.onpaste = function (e) {
         e.preventDefault();
     }
 
@@ -80,10 +93,7 @@ function validarCorreoLogin() {
 function validarPass() {
     var password = document.getElementById('password').value;
     var expr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    console.log(!expr.test(password));
-    console.log(password);
     if (!expr.test(password)) {
-        console.log(password);
         return false;
     } else {
         return true;
@@ -93,10 +103,7 @@ function validarPass() {
 function validarPassConfirm() {
     var password = document.getElementById('confirmpassword').value;
     var expr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    console.log(!expr.test(password));
-    console.log(password);
     if (!expr.test(password)) {
-        console.log(password);
         return false;
     } else {
         return true;
@@ -108,10 +115,7 @@ function validarPassConfirm() {
 function validarPassLogin() {
     var password = document.getElementById('inputPasswordLogin').value;
     var expr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    console.log(!expr.test(password));
-    console.log(password);
     if (!expr.test(password)) {
-        console.log(password);
         return false;
     } else {
         return true;

@@ -6,6 +6,30 @@ body{
     max-height: auto;
 }
 
+/*Se agrega para contener la x de eiminar producto dentro de la tarjeta*/
+.tarjeta-obra{
+    position: relative;
+}
+
+#ocultaCarritoFlotante{
+    position: relative;
+    left: 320px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 200;
+    margin-bottom: -20px;
+    font-size: 18px;
+    color: #444142ba;
+    background-color: #e0e3e9
+}
+
+#carrito-flotante{
+    display: none;
+}
+
+#carrito-flotante.mostrar{
+display: block;
+} 
+   
 .imagen-producto-carrito-flotante{
     display: flex;
     align-items: center;
@@ -41,7 +65,7 @@ body{
 .realizar-pago{
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 10px;
     color: #D0417E;
     box-shadow: 0px 3px 5px 0px #D0417E;
@@ -61,7 +85,9 @@ body{
     text-align: left;
 }
 .btn-close{
-    margin-left: 350px;
+    position: absolute;
+    left: 385px;
+    top: 1px;
 }
 
 .carrito{
@@ -89,6 +115,10 @@ body{
         height: 600px;
         padding-bottom: 13px;
         overflow-y: scroll;
+    }
+    #ocultaCarritoFlotante{
+        position: relative;
+        left: 330px;        
     }
     .titulosRosa{
         font-size: 30px;
@@ -122,7 +152,13 @@ body{
         max-height: 70%;
         background-size: cover;
     }
-    
+    #ocultaCarritoFlotante{
+        position: relative;
+        left: 320px;        
+    }
+    .btn-close{
+        left: 370px;
+    }
 
 }
 
@@ -138,6 +174,10 @@ body{
         height: 600px;
         padding-bottom: 13px;
         overflow-y: scroll;
+    }
+    #ocultaCarritoFlotante{
+        position: relative;
+        left: 250px;        
     }
     img{
         max-width: 40%;
@@ -160,7 +200,7 @@ body{
         font-size: 16px;
     }
     .btn-close{
-        margin-left: 270px;
+        left: 280px;
     }
     .cerrar{
         display: flex;
