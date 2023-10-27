@@ -1,10 +1,19 @@
 //Funcion para mostrar carrito presionando el boton de carrito
-function mostrarCarrito (){
-    document.getElementById('carrito-flotante').style.display = 'block';
-}
+const botonCarrito= document.querySelector("#muestraCarritoFlotante");
+const carritoFlotanteNav= document.querySelector("#carrito-flotante");
+
+
+// function mostrarCarrito (){
+    botonCarrito.addEventListener("click",()=>{
+        carritoFlotanteNav.classList.add("mostrar");
+         console.log("se muestra carrito");
+    });
+
+// }
 //Funcion para ocultar carrito presionando el boton ocultar
 function ocultarCarrito (){
-    document.getElementById('carrito-flotante').style.display = 'none';
+    carritoFlotanteNav.classList.remove("mostrar");
+    
 }
 
 carrito=[];
