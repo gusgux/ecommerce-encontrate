@@ -13,7 +13,7 @@ body{
 
 #ocultaCarritoFlotante{
     position: relative;
-    left: 320px;
+    left: 45%;
     font-family: 'Archivo', sans-serif;
     font-weight: 200;
     margin-bottom: -20px;
@@ -24,10 +24,12 @@ body{
 
 #carrito-flotante{
     display: none;
+    z-index: 10;
 }
 
 #carrito-flotante.mostrar{
 display: block;
+width: auto;
 } 
    
 .imagen-producto-carrito-flotante{
@@ -77,6 +79,9 @@ display: block;
     padding-top:13px ;
     text-align: left;
 }
+.container{
+    width: fit-content;
+}
 
 .total-footer{
     font-size: 16px;
@@ -86,7 +91,7 @@ display: block;
 }
 .btn-close{
     position: absolute;
-    left: 385px;
+    right: 10px;
     top: 1px;
 }
 
