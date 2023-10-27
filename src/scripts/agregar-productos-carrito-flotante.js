@@ -1,8 +1,3 @@
-/* //Variables
-const carritoFlotante = document.querySelector('#carrito-flotante'); //todo el contenedor del carrito 
-const listaProductos = document.querySelector('#'); //Agrega el id de la lista de los productos
-const contenedorCarritoFlotante = document.querySelector('#lista-carrito-flotante'); //agrega id para lista de carrito 
-const eliminarProducto = document.querySelector('.btn-close"'); //Boton de eliminar producto */
 carrito=[];
 cargarCarrito();
 // agregarObraCarrito();
@@ -51,50 +46,114 @@ function cargarCarrito() {
 function agregarCarritoFlotante(){
     for(let i =0; i<carrito.length;i++){
         carrito[i]["obra_id"]=i;
-    const obra = document.createElement('div');
-    obra.id="lista-carrito-flotante";
-    obra.className=""
-    obra.innerHTML =
-    `<hr data-idObra="${carrito[i].obra_id}">
-    <div id="lista-carrito-flotante" class="row" class="col-sm-12 col-md-4 col-lg-4"> <!--se agrega id para js-->
-       <!--Columna 1    Imagen de producto-->
-       <div class="col-sm-3 col-md-4 col-lg-4 imagen-producto-carrito-flotante"> 
-           <img src="${carrito[i].imagen}" class="card-img-top" alt="imagen 1" >
-       </div><!--cierre imagen-->
-       <!--Columna 2-->
-       <div class="col-sm-7 col-md-8 col-lg-8 ">
-           <div class="card-body">
-                <!--Columna 2.1-->
-                <div class="col cerrar">
-                    <!--Columna 2.1.1   Nombre del producto-->
-                    <div class="col-sm-11 col-md-9 col-lg-11">
-                        <h5 class="card-title">${carrito[i].titulo}</h5>
-                    </div>
-                    <!--Columna 2.1.2   Boton eliminar producto-->
-                    <div class="col-sm-1 col-md-3 col-lg-1">
-                        <a href="#">
-                            <button type="button" id="${carrito[i]}" class="btn-close" aria-label="Close"></button>
-                        </a>
-                    </div>
-                </div>
-               <h6 class="nombre-artista">${carrito[i].artista}</h6>
-               <br>
-               <!--Tamano del producto-->
-                <p class="centrado tamano-obra">Largo ${carrito[i].largo} x Ancho ${carrito[i].ancho}</p> 
-                <br>
-                <!--Columna 2.2-->
-                <div class="row">
-                    <!--Columna 2.2.2   Precio de la pieza-->
-                    <div class="col-11" >
-                        <p class="precio"> ${carrito[i].precio}</p> 
-                    </div>
-                </div>
-            </div>
-        </div><!--cierre columna info-->
-    </div> <!--cierre fila-->
-    `;
+    //const obra = document.createElement('div');
+   // obra.id="lista-carrito-flotante";
+   // obra.className=""
+    //obra.innerHTML =
+    
+    // Obtén el contenedor donde deseas agregar los elementos
+    //const contenedor = document.getElementById("lista-carrito-flotante");
+
+    // Crea los elementos necesarios
+    const contenedor = document.createElement("div");
+    const hrElement = document.createElement("hr");
+    hrElement.setAttribute("data-idObra", carrito[i].obra_id);
+
+    const divPrincipal = document.createElement("div");
+    divPrincipal.classList.add("row", "col-12");
+
+    const enlace = document.createElement("a");
+    enlace.setAttribute("href", "#");
+
+    const botonCerrar = document.createElement("button");
+    botonCerrar.setAttribute("type", "button");
+    botonCerrar.setAttribute("id", carrito[i]);
+    botonCerrar.classList.add("btn-close");
+    botonCerrar.setAttribute("aria-label", "Close");
+    botonCerrar.addEventListener("click", () =>{
+        contenedor.remove()
+     });
+
+    const divImagen = document.createElement("div");
+    divImagen.classList.add("col-sm-3", "col-md-4", "col-lg-4", "imagen-producto-carrito-flotante");
+
+    const imagen = document.createElement("img");
+    imagen.setAttribute("src", carrito[i].imagen);
+    imagen.classList.add("card-img-top");
+    imagen.setAttribute("alt", "imagen 1");
+
+    const divInfo = document.createElement("div");
+    divInfo.classList.add("col-sm-7", "col-md-8", "col-lg-8");
+
+    const divCerrar = document.createElement("div");
+    divCerrar.classList.add("col", "cerrar");
+
+    const h5Element = document.createElement("h5");
+    h5Element.classList.add("card-title");
+    h5Element.textContent = carrito[i].titulo;
+
+    const h6Element = document.createElement("h6");
+    h6Element.classList.add("nombre-artista");
+    h6Element.textContent = carrito[i].artista;
+
+    const tamanoElement = document.createElement("p");
+    tamanoElement.classList.add("centrado", "tamano-obra");
+    tamanoElement.textContent = `Largo ${carrito[i].largo}cm x Ancho ${carrito[i].ancho}cm`;
+    
+    const fila = document.createElement("div");
+    fila.classList.add("row");
+    const columnaSigno = document.createElement("div");
+    columnaSigno.classList.add("col-8");
+    const columnaPrecio = document.createElement("div");
+    columnaPrecio.classList.add("col-4");
+    const precioSigno = document.createElement("p");
+    precioSigno.classList.add("precioSigno");
+    precioSigno.textContent = "$";
+
+    const precioElement = document.createElement("p");
+    precioElement.classList.add("precio");
+    precioElement.textContent = carrito[i].precio;
+    columnaSigno.appendChild(precioSigno);
+    columnaPrecio.appendChild(precioElement);
+    fila.appendChild(columnaSigno);
+    fila.appendChild(columnaPrecio);
+
+    // Agrega los elementos al DOM
+    divCerrar.appendChild(h5Element);
+    divInfo.appendChild(divCerrar);
+    divInfo.appendChild(h6Element);
+    divInfo.appendChild(document.createElement("br"));
+    divInfo.appendChild(tamanoElement);
+    divInfo.appendChild(document.createElement("br"));
+    divInfo.appendChild(fila);
+    //divInfo.appendChild(precioSigno);
+    //divInfo.appendChild(precioElement);
+
+    divImagen.appendChild(imagen);
+
+    enlace.appendChild(botonCerrar);
+
+    
+    const contenedorEnlace = document.createElement("div");
+    contenedorEnlace.appendChild(enlace);
+    contenedorEnlace.classList.add("row");
+    divPrincipal.appendChild(contenedorEnlace);
+    const divCuadro = document.createElement("div");
+    divCuadro.classList.add("row");
+    divCuadro.appendChild(divImagen);
+    divCuadro.appendChild(divInfo);
+    divPrincipal.appendChild(divCuadro);
+    //divPrincipal.appendChild(divImagen);
+    //divPrincipal.appendChild(divInfo);
+
+
+    contenedor.appendChild(hrElement);
+    contenedor.appendChild(divPrincipal);
+
+
+
     const carritoFlotante = document.querySelector('#fila-carrito-flotante');
-    carritoFlotante.insertBefore(obra,carritoFlotante[i]);
+    carritoFlotante.insertBefore(contenedor,carritoFlotante[i]);
     }
 
 }
@@ -115,14 +174,15 @@ function calcularSubTotal (){
     totalFooter.textContent = '$ '+subTotal + '.00';
 }
 
+
 //Eliminacion del producto
 const eliminarProducto = document.querySelectorAll('.btn-close');
 eliminarProducto.forEach(element => {
     
     element.addEventListener('click', e =>{ 
         //Remover todo mi contenedor 
-        let contenedorCarrito = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; 
-        contenedorCarrito.remove();
+        let contenedorCarrito = e.target.parentElement.parentElement.parentElement; /*.parentElement.parentElement.parentElement.parentElement //Eliminados para que elimine solo una obra y no todas */ 
+        contenedorCarrito.parentElement.remove();//
         //
         let precio = contenedorCarrito.querySelector('.precio');
         console.log(precio.textContent);
@@ -131,47 +191,22 @@ eliminarProducto.forEach(element => {
         totalFooter.textContent = '$ '+subTotal + '.00';
         //eliminar solo una fila 
         let getId = contenedorCarrito.querySelector('[data-idObra]');
-        //console.log(getId.dataset.idobra);
-       // console.log(getId);
         //carrito=[];
-        console.log(carrito);
+        console.log(carrito, "carrito", getId, "getId");
         let nuevoCarrito = [];
         carrito.forEach(element => {
-            if (element.obra_id!= getId.dataset.idobra) {
+            console.log(element, "elemento");
+            if (element.obra_id !== getId.dataset.idobra) {
                 nuevoCarrito.push(element);
             }
         });
-        console.log (nuevoCarrito);
-        //se resetea el locar estorage, con los carritos eliminados 
+        console.log(nuevoCarrito);
+
+        // Actualiza el almacenamiento local con el nuevo carrito
         localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+
         
     })
-
 });
 
-
-
-/* function eliminarCurso(e.target.classList){
-    console.log ('desde eiminar curso');
-
-} */
-
-/*   Idea de eliminacion de articulo
-// Agregar un manejador de eventos al botón
-botonCarrito.addEventListener('click', function() {
-    agregarAlCarrito(productoSeleccionado);
-  }); */
-
-
-
-/* cargarEventListeners()//Llamo la funcion
-function cargarEventListeners(){
-    //Cuando agregas un producto presionando "Agregar al carrito"
-    listaProductos.addEventListener('click', agregarProducto);
-}
-
-
-//Funciones
-function agregarProducto(){
-    console.log('presionarndo en cursos');//verificando que funcione
-} */
+ 
