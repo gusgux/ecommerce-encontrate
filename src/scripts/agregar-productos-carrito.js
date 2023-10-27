@@ -48,20 +48,20 @@ function agregarCarrito(){
            </div>
            <!--Fila 4  -->
            <div class="d-flex">
-               <div class="col-sm-6 col-md-5 col-lg-5">
-                   <h4 class="tamano-obra">Largo ${carrito[i].largo}cm x Ancho ${carrito[i].ancho}cm</h4>
+               <div class="col-sm-6 col-md-5 col-lg-6">
+                   <h4 class="tamano-obra-carrito">Largo ${carrito[i].largo}cm x Ancho ${carrito[i].ancho}cm</h4>
                </div>
                <div class="col-sm-2 col-md-2 col-lg-2">
-                <p class="precioSigno">$</p>
+                <p class="precio-signo-carrito">$</p>
                </div>
-               <div class="col-sm-4 col-md-5 col-lg-5">
+               <div class="col-sm-4 col-md-5 col-lg-4">
                    <p class="precio">${carrito[i].precio}</p>
                </div>
            </div>
        </div>
      </div><!--Cierre Fila-->
     `;
-    const carritoFlotante = document.querySelector('#fila-carrito');
+    const carritoFlotante = document.querySelector('#creacion-fila-carrito');
     carritoFlotante.insertBefore(obra,carritoFlotante[i]);
     }
 
@@ -80,7 +80,7 @@ function calcularSubTotal (){
     }
     console.log (subTotal);
     console.log(carrito.length)
-    const totalFooter = document.querySelector('.sub-total');
+    const totalFooter = document.querySelector('.sub-total-carrito');
     totalFooter.textContent = '$ '+subTotal + '.00';
 }
 
@@ -94,7 +94,7 @@ function calcularTotal() {
     const total = subTotal + costoEnvio;
     console.log(total);
 
-    const totalElement = document.querySelector('.precio-total');
+    const totalElement = document.querySelector('.precio-total-carrito');
     totalElement.textContent = 'Total= $'+total+'.00';
     
 }
@@ -106,20 +106,18 @@ eliminarProducto.forEach(element => {
     
     element.addEventListener('click', e =>{ 
         //Remover todo mi contenedor 
-        let contenedorCarrito = e.target.parentElement.parentElement.parentElement.parentElement.parentElement; //.parentElement.parentElement
+        let contenedorCarrito = e.target.parentElement.parentElement.parentElement.parentElement.parentElement; 
         contenedorCarrito.remove();
-        //
+        
         let precio = contenedorCarrito.querySelector('.precio');
         console.log(precio.textContent);
-        const totalFooter = document.querySelector('.sub-total');
+        const totalFooter = document.querySelector('.sub-total-carrito');
         subTotal=subTotal-parseInt(precio.textContent);
         totalFooter.textContent = '$ '+subTotal + '.00';
         calcularTotal();
         //eliminar solo una fila 
         let getId = contenedorCarrito.querySelector('[data-idObra]');
-        //console.log(getId.dataset.idobra);
-       // console.log(getId);
-        //carrito=[];
+       
         console.log(carrito);
         let nuevoCarrito = [];
         carrito.forEach(element => {

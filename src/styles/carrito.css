@@ -97,36 +97,52 @@ body{
     overflow-y: scroll;
 }
 
-.tamano-obra{
+.tamano-obra-carrito{
     font-size: 16px;
     text-align: center;
 }
 
-.precioSigno{
+.precio-signo-carrito{
     font-size: 16px;
     text-align: right;
+    color: #010101;
 }
 
 .precio{
     font-size: 16px;
     text-align: left;
     padding-right: 10px;
+    color: #010101;
 }
 
 /*Bloque derecho*/
+.sub-total-carrito-txt{
+    font-size: 16px;
+    color: #010101;
+    text-align: left;
+}
 
-.sub-costos{
+.sub-total-carrito{
     font-size: 16px;
     font-weight: bold;
+    color: #010101;
+    text-align: left;
 }
 
-.indicaciones{
-    font-size: 15px;
-    text-align: justify;
-    padding-right: 10px;
+.costo-envio-carrito{
+    font-size: 16px;
+    color: #010101;
+    text-align: left;
 }
 
-.realizar-pago{
+.costo-envio{
+    font-size: 16px;
+    font-weight: bold;
+    color: #010101;
+    text-align: left;
+}
+
+.realizar-pago-carrito{
     color: #D0417E;
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
@@ -138,18 +154,12 @@ body{
     height: 50px;
 }
 
-    .realizar-pago:hover{
+    .realizar-pago-carrito:hover{
         color: #D0417E;
     }
 
-    .total{
-        font-size: 20px;
-        text-align: end;
-        padding-right: 10px;
-        font-weight: bold;
-        padding: 10px;
-    }
-    .precio-total{
+    .precio-total-carrito{
+        color: #010101;
         font-size: 18px;
         text-align: center;
         font-weight: bold;
@@ -180,14 +190,14 @@ body{
     }
 
     /*  Bloque derecho  */
-    .realizar-pago{
+    .realizar-pago-carrito{
         font-size: 16px;
         margin-left: 0px;
-        width: 130px;
+        width: 140px;
         height: 40px;
     }
 
-        .precio-total{
+        .precio-total-carrito{
             font-size: 16px;
             padding: 8px;
         }
@@ -217,14 +227,14 @@ body{
 
     /*  Bloque derecho  */
 
-    .realizar-pago{
+    .realizar-pago-carrito{
         font-size: 14px;
         margin-left: 0px;
         width: 120px;
         height: 40px;
     }
 
-        .precio-total{
+        .precio-total-carrito{
             font-size: 14px;
             padding: 10px;
         }
@@ -253,15 +263,15 @@ body{
     }
     /*  Bloque derecho  */
 
-    .realizar-pago{
+    .realizar-pago-carrito{
         font-size: 14px;
         margin-left: 0px;
         width: 100px;
         height: 55px;
     }
 
-        .precio-total{
-            font-size: 14px;
+        .precio-total-carrito{
+            font-size: 13px;
             padding-top: 20px;
         }
 }
@@ -286,7 +296,6 @@ body{
 
 
     /*  Bloque izquierda    */
-
     .titulosRosa{
         color: #D0417E;
         font-weight: 800;
@@ -325,11 +334,11 @@ body{
         height: 80px;
     }
 
-    .tamano-obra{
+    .tamano-obra-carrito{
         font-size: 13px;
     }
 
-    .precioSigno{
+    .precio-signo-carrito{
         font-size: 13px;
     }
     
@@ -338,23 +347,30 @@ body{
     }
 
     /*  Bloque derecho  */
-
-    .sub-costos{
-        font-size: 14px;
-    }
-
-    .indicaciones{
+    .sub-total-carrito-txt{
         font-size: 12px;
     }
-
-    .realizar-pago{
+    
+    .sub-total-carrito{
+        font-size: 12px;
+    }
+    
+    .costo-envio-carrito{
+        font-size: 12px;
+    }
+    
+    .costo-envio{
+        font-size: 12px;
+    }
+   
+    .realizar-pago-carrito{
         font-size: 13px;
         margin-left: 0px;
         width: 85px;
         height: 55px;
     }
 
-        .precio-total{
+        .precio-total-carrito{
             font-size: 12px;
             padding: 15px;
         }
@@ -396,6 +412,7 @@ body{
         object-fit: contain;
         display: flex;
     }
+
     .carrito-imagen {
         display: flex;
     }
@@ -418,46 +435,51 @@ body{
         height: 80px;
     }
 
-    .tamano-obra{
-        font-size: 12px;
+    .tamano-obra-carrito-carrito{
+        font-size: 14px;
         padding-top: 4px;
     }
 
-    .precioSigno{
+    .precio-signo-carrito{
         position: absolute;
         font-size: 14px;
-        left: 220px;
+        left: 230px;
     }
 
     .precio{
         position: absolute;
-        font-size: 14px;
+        font-size: 13px;
         left: 240px;
     }
 
     /*  Bloque derecho  */
 
-    .sub-costos{
-        font-size: 14px;
-        
-    }
-
-    .sub-total{
-        margin-left: 130px;
-    }
-
-    .indicaciones{
+    .sub-total-carrito-txt{
         font-size: 12px;
     }
+    
+    .sub-total-carrito{
+        font-size: 12px;
+        margin-left: 150px;
+    }
+    
+    .costo-envio-carrito{
+        font-size: 12px;
+    }
+    
+    .costo-envio{
+        font-size: 12px;
+        margin-left: 115px;
+    }
 
-    .realizar-pago{
+    .realizar-pago-carrito{
         font-size: 14px;
         margin-left: 0px;
         width: 120px;
         height: 40px;
     }
 
-        .precio-total{
+        .precio-total-carrito{
             font-size: 14px;
             padding-top: 10px;
             margin-left: 20px;
