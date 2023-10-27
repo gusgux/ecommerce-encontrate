@@ -1,3 +1,12 @@
+:root {
+	--backgroundcolor: #d9d9d9;
+	--textcolor: #ffffff;
+	--primarycolor: #d0417e;
+	--secondarycolor: #0000008f;
+	--thirdcollor: #010101;
+	--extracolor: #cccccc;
+}
+
 body{
     font-family:'Roboto Mono', monospace;
 }
@@ -48,6 +57,11 @@ body{
     text-align: center;
 }
 
+/*Se agrega para contener la x de eiminar producto dentro de la tarjeta*/
+.tarjeta-obra{
+    position: relative;
+}
+
 .carrito-imagen img{
     max-height: 250px;
     object-fit: contain;
@@ -61,6 +75,13 @@ body{
     font-size: 26px;
     font-weight: bold;
 }
+
+.btn-close{
+    position: absolute;
+    left: 920px;
+    top: 1px;
+}
+
 
 .nombre-artista{
     font-size: 18px;
@@ -77,27 +98,18 @@ body{
 }
 
 .tamano-obra{
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 }
 
-/*.contador-piezas{
-    font-size: 18px;
-    text-align: center;  
-}
-    .controlCantidad{
-        text-decoration: none;
-        color: black;
-        text-align: center;
-    }
-
-    .controlCantidad:hover{
-        cursor: pointer;
-    }*/
-    
-.precio{
-    font-size: 18px;
+.precioSigno{
+    font-size: 16px;
     text-align: right;
+}
+
+.precio{
+    font-size: 16px;
+    text-align: left;
     padding-right: 10px;
 }
 
@@ -144,6 +156,115 @@ body{
         padding: 10px;
     }
 
+ @media (max-width: 1870px){ /*Extra*/
+    
+    /*  Bloque izquierda    */
+    .btn-close{
+        left: 850px;
+    }
+}
+    
+@media (max-width: 1700px){ /*Extra*/
+    
+     /*  Bloque izquierda    */
+    .btn-close{
+         left: 750px;
+    }
+}
+
+@media (max-width: 1500px){ /*Extra*/
+    
+    /*  Bloque izquierda    */
+    .btn-close{
+        left: 660px;
+    }
+
+    /*  Bloque derecho  */
+    .realizar-pago{
+        font-size: 16px;
+        margin-left: 0px;
+        width: 130px;
+        height: 40px;
+    }
+
+        .precio-total{
+            font-size: 16px;
+            padding: 8px;
+        }
+}
+
+@media (max-width: 1000px){ /*Extra*/
+    .contenedor{
+        margin-top: 30px;
+        margin-left: 25px;
+        margin-right: 1px;
+    }
+
+    .bloque-izquierda{
+        margin-right: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bloque-derecha{
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    /*  Bloque izquierda    */
+    .btn-close{
+        left: 480px;
+    }
+
+    /*  Bloque derecho  */
+
+    .realizar-pago{
+        font-size: 14px;
+        margin-left: 0px;
+        width: 120px;
+        height: 40px;
+    }
+
+        .precio-total{
+            font-size: 14px;
+            padding: 10px;
+        }
+}
+
+@media (max-width: 900px){ /*Extra*/
+    .contenedor{
+        margin-top: 30px;
+        margin-left: 25px;
+        margin-right: 1px;
+    }
+
+    .bloque-izquierda{
+        margin-right: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bloque-derecha{
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    /*  Bloque izquierda    */
+    .btn-close{
+        left: 430px;
+    }
+    /*  Bloque derecho  */
+
+    .realizar-pago{
+        font-size: 14px;
+        margin-left: 0px;
+        width: 100px;
+        height: 55px;
+    }
+
+        .precio-total{
+            font-size: 14px;
+            padding-top: 20px;
+        }
+}
 
 @media (max-width: 834px){  /*Vista Tableta*/
     .contenedor{
@@ -191,7 +312,7 @@ body{
     }
 
     .btn-close{
-        padding-left: 40px;
+        left: 380px;
     }
 
     .nombre-artista{
@@ -205,16 +326,15 @@ body{
     }
 
     .tamano-obra{
-        font-size: 14px;
+        font-size: 13px;
     }
 
-    /*.contador-piezas{
-        font-size: 14px; 
-    }*/
-        
+    .precioSigno{
+        font-size: 13px;
+    }
+    
     .precio{
-        font-size: 14px;
-        padding-right: 1px;
+        font-size: 13px;
     }
 
     /*  Bloque derecho  */
@@ -285,7 +405,7 @@ body{
     }
 
     .btn-close{
-        margin-left: 30px;
+        left: 290px;
     }
 
     .nombre-artista{
@@ -293,28 +413,37 @@ body{
     }
 
     .descripcion-obra{
-        font-size: 10px;
+        font-size: 12px;
         padding-right: 30px;
         height: 80px;
     }
 
     .tamano-obra{
         font-size: 12px;
+        padding-top: 4px;
     }
 
-   /* .contador-piezas{
-        font-size: 12px; 
-    }*/
-        
-    .precio{
+    .precioSigno{
+        position: absolute;
         font-size: 14px;
-        margin-left: 35px;
+        left: 220px;
+    }
+
+    .precio{
+        position: absolute;
+        font-size: 14px;
+        left: 240px;
     }
 
     /*  Bloque derecho  */
 
     .sub-costos{
         font-size: 14px;
+        
+    }
+
+    .sub-total{
+        margin-left: 130px;
     }
 
     .indicaciones{
@@ -322,15 +451,41 @@ body{
     }
 
     .realizar-pago{
-        font-size: 13px;
+        font-size: 14px;
         margin-left: 0px;
-        width: 85px;
-        height: 55px;
+        width: 120px;
+        height: 40px;
     }
 
         .precio-total{
             font-size: 14px;
-            padding: 15px;
-            margin-left: 10px;
+            padding-top: 10px;
+            margin-left: 20px;
         }
+}
+
+.head-4 {
+	font-size: 24px;
+	line-height: 32px;
+}
+.head-5 {
+	font-size: 20px;
+	line-height: 28px;
+}
+.head-6 {
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.15px;
+}
+
+.footer {
+    margin-top: 40px;
+	text-align: center;
+	color: var(--textcolor);
+	background: var(--thirdcollor);
+}
+
+.footer p {
+	margin: 0;
+	color: var(--textcolor);
 }
