@@ -144,7 +144,10 @@ scale: 1.4;
     height: 30px;
 }
 
-
+.botonLoginCabecera{
+    display: flex;
+    align-items: center;
+}
 /*.bloque1 div{
 border: 3px solid green;
 }*/
@@ -345,7 +348,29 @@ border-right: none;
     width: 100%;
     height: 37px;
 }
-
+.footer {
+    text-align: center;
+    color: var(--textcolor);
+    background: var(--thirdcollor);
+  }
+  
+  .head-4 {
+      font-size: 24px;
+      line-height: 32px;
+      
+      background-color: black;
+      color: white;
+      margin: 0;
+    }
+  
+    .head-6 {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      background-color: black;
+      color: white;
+      margin: 0;
+    }
 /* querys para el menu de hamburguesa */
 @media screen and (max-width: 770px) {
 
@@ -393,6 +418,8 @@ border-right: none;
     #contenedorNavList.visible{
         transition: all 500ms;
         opacity: 1;
+        visibility: visible;
+        
     }
 /*
     #botonCerrar {
