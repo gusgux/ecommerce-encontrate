@@ -349,7 +349,7 @@ function agregarAlCarrito(producto) {
 
     carrito.push(productoEnCarrito);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`"${productoSeleccionado.titulo}" se ha agregado al carrito`);
+    $('#modalAlerta').modal('show');
 
 
 
@@ -366,7 +366,7 @@ function agregarAlCarrito(producto) {
   };
   carrito.push(productoEnCarrito);
   localStorage.setItem('carrito', JSON.stringify(carrito));
-  alert(`"${obraSeleccionada.titulo}" se ha agregado al carrito`);
+  $('#modalAlerta').modal('show')
 
 
 
@@ -389,7 +389,7 @@ function agregarAlCarritoYComprar() {
         agregarAlCarrito(obraSeleccionada);
         contadorCarrito++;
     } else {
-        alert("solo se puede agregar un producto agregar al carrito");
+      $('#modaladicion').modal('show')
     }
 }
 
@@ -406,7 +406,7 @@ function agregarAlCarritoYComprar2() {
         agregarAlCarrito(productoSeleccionado);
         contadorCarrito++;
     } else {
-        alert("solo se puede agregar un producto al carrito");
+      $('#modaladicion').modal('show')
     }
 }
 
