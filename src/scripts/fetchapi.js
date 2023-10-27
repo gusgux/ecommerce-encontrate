@@ -13,7 +13,34 @@
 // Define la URL de la API
 const url = 'http://localhost:8080/api/usuario';
 
-export function enviarDatos(data) {
+// Configura la solicitud POST
+
+export async function enviarDatos(data) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.status === 200) {
+            console.log('El usuario se creó exitosamente.');
+        } else {
+            console.error('Hubo un error al crear el usuario. Código de estado:', response.status);
+            const errorText = await response.json();
+            if (errorText) {
+                console.error(errorText); // Imprime los detalles del error si los hubiera
+            }
+        }
+    } catch (error) {
+        console.error('Hubo un error en la solicitud:', error);
+    }
+}
+
+
+/*export function enviarDatos(data) {
     fetch(url, {
         method: 'POST',
         headers: {
@@ -22,11 +49,12 @@ export function enviarDatos(data) {
         body: JSON.stringify(data)
     })
         .then(response => {
-            if (response.status === 201) {
+            console.log(response)
+            if (response.status === 200) {
                 console.log('El usuario se creó exitosamente.');
             } else {
                 console.error('Hubo un error al crear el usuario. Código de estado:', response.status);
-                return response.text();
+                return response.json();
             }
         })
         .then(errorText => {
@@ -38,17 +66,35 @@ export function enviarDatos(data) {
             console.error('Hubo un error en la solicitud:', error);
         });
 }
+*/
 
-
-export async function getCorreo(email) {
+/*export async function getCorreo(email) {
     const list = await fetch(`http://localhost:8080/api/usuario/byCorreo?correo=${email}`);
     const response = await list.json();
     return response;
 }
+*/
+export async function getCorreo(email) {
+    try {
+        const list = await fetch(`http://localhost:8080/api/usuario/byCorreo?correo=${email}`);
+        if (!list.ok) {
+            // Si la respuesta no es "ok" (código de estado no exitoso), maneja el error
+            throw new Error('Hubo un error en la solicitud.');
+
+        }
+        const response = await list.json();
+        return response;
+
+    } catch (error) {
+        console.log('Hubo un error en la solicitud:', error);
+        return null; // Puedes devolver null u otro valor predeterminado en caso de error
+    }
+}
+
 export async function getByEmail(email) {
     // Define la URL de la API con el correo electrónico específico como parámetro
     const url = `http://localhost:8080/api/usuario/byCorreo?correo=${email}`;
-    console.log(url);
+    //console.log(url);
 
     try {
         const response = await fetch(url);

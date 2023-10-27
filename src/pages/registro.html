@@ -193,7 +193,7 @@
               </div>
               <div class="mb-3 position-relative">
                 <label for="name" class="form-label">Apellidos</label>
-                <input type="name" class="form-control nombre" required id="inputLastName" aria-describedby="nameHelp"
+                <input type="name" class="form-control apellido" required id="inputLastName" aria-describedby="nameHelp"
                   minlength="5" maxlength="60">
                 <div class="valid-tooltip">
                   Correcto
@@ -314,8 +314,8 @@
             <form id="formularioLogin" class="needs-validation" novalidate> <!-- inicia formulario -->
               <div class="mb-3 position-relative">
                 <label for="labelEmail" class="form-label">Correo electrónico</label>
-                <input type="email" value="limon@email.com" class="form-control" id="inputEmailLogin"
-                  aria-describedby="email" required onblur="validarCorreoLogin()" minlength="8" maxlength="45">
+                <input type="email" class="form-control" id="inputEmailLogin" aria-describedby="email" required
+                  onblur="validarCorreoLogin()" minlength="8" maxlength="45">
                 <div class="valid-tooltip">
                   Correcto
                 </div>
@@ -325,7 +325,7 @@
               </div>
               <div class="mb-3 position-relative">
                 <label for="labelPasswordLogin" class="form-label">Contraseña</label>
-                <input type="password" value="12345678" class="form-control pass" id="inputPasswordLogin" required
+                <input type="password" class="form-control pass" id="inputPasswordLogin" required
                   onblur="validarPassLogin()" minlength="8" maxlength="25">
                 <div class="valid-tooltip">
                   Correcto
